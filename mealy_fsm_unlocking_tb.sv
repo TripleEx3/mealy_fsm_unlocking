@@ -105,6 +105,7 @@ module mealy_unlock_fsm_tb();
     
     // Task to send a single bit to the FSM
     task send_bit(input logic bit_value);
+		@(posedge clk);
         serial_valid = 1;
         serial_data = bit_value;
         #(CLOCK_PERIOD);
